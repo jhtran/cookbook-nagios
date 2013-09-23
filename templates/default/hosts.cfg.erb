@@ -48,9 +48,17 @@ define host {
   end %>
   address <%= ip %>
   <% if n[node['nagios']['host_name_attribute']] %>
-  host_name <%= node['nagios']['server']['normalize_hostname'] ? n[node['nagios']['host_name_attribute']].downcase : n[node['nagios']['host_name_attribute']] %>
+    <% if n[node['nagios']['host_name_attribute']].match("#{node['domain']}") %>
+      host_name <%= node['nagios']['server']['normalize_hostname'] ? n[node['nagios']['host_name_attribute']].downcase : n[node['nagios']['host_name_attribute']] %>
+    <% else %>
+      host_name <%= node['nagios']['server']['normalize_hostname'] ? "#{n[node['nagios']['host_name_attribute']].downcase}.#{node['domain'].downcase}" : "#{n[node['nagios']['host_name_attribute']]}.#{node['domain']}" %>
+    <% end %>
   <% else %>
-  host_name <%= node['nagios']['server']['normalize_hostname'] ? n['hostname'].downcase : n['hostname'] %>
+    <% if n['hostname'].match("#{node['domain']}") %>
+      host_name <%= node['nagios']['server']['normalize_hostname'] ? n['hostname'].downcase : n['hostname'] %>
+    <% else %>
+      host_name <%= node['nagios']['server']['normalize_hostname'] ? "#{n['hostname'].downcase}.#{node['domain'].downcase}" : "#{n['hostname']}.#{node['domain']}" %>
+    <% end %>
   <% end %>
   <% if node['nagios']['multi_environment_monitoring'] -%>
   <% if n.roles.nil? || n.roles.length == 0 -%>
