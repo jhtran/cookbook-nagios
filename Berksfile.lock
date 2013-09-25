@@ -46,7 +46,7 @@
       "locked_version": "2.2.2"
     },
     "rsyslog": {
-      "locked_version": "1.7.0"
+      "locked_version": "1.8.0"
     }
   }
 }
