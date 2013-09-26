@@ -1,4 +1,5 @@
-.bundle
-.cache
-.kitchen
-bin
+.bundle/
+.cache/
+.cookbooks/
+.kitchen/
+bin/
