@@ -31,7 +31,7 @@ $USER2$="/bin/false"
 <% elsif node[:roles].include?(node[:nagios][:server_standby_role]) -%>
 # $USER2$ will be the condition for whether or not nagios is up on the primary.
 # On the standby, as long as this returns OK (or true) we will not send notifies.
-$USER2$="/usr/lib/nagios/plugins/check_nrpe -H <%= @primary_ip %> -c check_nagios"
+$USER2$="/usr/lib/nagios/plugins/check_nrpe -H <%= @primary_ip %> -c check_nagios -t 1"
 <% end -%>
 
 # Sets $USER2$ to be the path to event handlers
