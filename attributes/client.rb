@@ -61,7 +61,7 @@ end
 
 default['nagios']['nrpe']['conf_dir']          = '/etc/nagios'
 default['nagios']['nrpe']['dont_blame_nrpe']   = 0
-default['nagios']['nrpe']['command_timeout']   = 60
+default['nagios']['nrpe']['command_timeout']   = 900
 
 # for plugin from source installation
 default['nagios']['plugins']['url']      = 'http://prdownloads.sourceforge.net/sourceforge/nagiosplug'
