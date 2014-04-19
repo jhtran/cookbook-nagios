@@ -4,10 +4,10 @@
       "path": "."
     },
     "apache2": {
-      "locked_version": "1.9.6"
+      "locked_version": "1.10.2"
     },
     "iptables": {
-      "locked_version": "0.12.0"
+      "locked_version": "0.13.2"
     },
     "logrotate": {
       "locked_version": "1.5.0"
@@ -19,37 +19,31 @@
       "locked_version": "2.0.0"
     },
     "php": {
-      "locked_version": "1.4.4"
+      "locked_version": "1.4.6"
     },
     "xml": {
-      "locked_version": "1.2.2"
+      "locked_version": "1.2.4"
     },
     "mysql": {
-      "locked_version": "4.1.2"
-    },
-    "openssl": {
-      "locked_version": "1.1.0"
-    },
-    "homebrew": {
-      "locked_version": "1.5.4"
-    },
-    "windows": {
-      "locked_version": "1.30.0"
-    },
-    "chef_handler": {
-      "locked_version": "1.1.5"
+      "locked_version": "5.1.8"
     },
     "yum-epel": {
-      "locked_version": "0.3.4"
+      "locked_version": "0.3.6"
     },
     "yum": {
-      "locked_version": "3.1.4"
+      "locked_version": "3.2.0"
+    },
+    "windows": {
+      "locked_version": "1.30.2"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.6"
     },
     "iis": {
       "locked_version": "2.1.0"
     },
     "nginx": {
-      "locked_version": "2.4.4"
+      "locked_version": "2.6.2"
     },
     "apt": {
       "locked_version": "2.3.8"
