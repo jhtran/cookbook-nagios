@@ -118,6 +118,10 @@ nodes.sort! {|a,b| a.name <=> b.name }
 # maps nodes into nagios hostgroups
 service_hosts= Hash.new
 search(:role, "*:*") do |r|
+  # need to check both immediate assigned role as well as expanded role membership
+  if search(:node, "roles:#{r.name}").empty? and search(:node, "role:#{r.name}").empty?
+    Chef::Log.info "Hostgroup#{r.name} empty - skipping" and next
+  end
   hostgroups << r.name
   nodes.select {|n| n['roles'].include?(r.name) }.each do |n|
     if n[node['nagios']['host_name_attribute']]
